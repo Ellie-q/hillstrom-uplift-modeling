@@ -1,0 +1,33 @@
+{
+  "dataset": "hillstrom (stand-in; Criteo S3 dead 2026-11-14/15)",
+  "n_rows": 64000,
+  "treatment": "any email (Mens + Womens E-Mail) vs No E-Mail",
+  "primary_outcome": "visit",
+  "secondary_outcome": "conversion",
+  "split": "train/val/test 60/20/20, stratified treatment x visit, seed 42",
+  "n_train": 38400,
+  "n_val": 12800,
+  "n_test": 12800,
+  "ate_visit_test": 0.061,
+  "ate_conversion_test": 0.0042,
+  "models": {
+    "two_model_logreg": {
+      "qini_auc_visit_test": 0.0361,
+      "uplift_auc_visit_test": 0.0216,
+      "top_decile_uplift_minus_ate_visit": 0.0406,
+      "mean_predicted_uplift": 0.0596
+    },
+    "solo_model_logreg": {
+      "qini_auc_visit_test": 0.0217,
+      "uplift_auc_visit_test": 0.0139,
+      "top_decile_uplift_minus_ate_visit": 0.0407,
+      "mean_predicted_uplift": 0.0599
+    },
+    "two_model_rf": {
+      "qini_auc_visit_test": -0.0288,
+      "uplift_auc_visit_test": -0.0167,
+      "top_decile_uplift_minus_ate_visit": -0.0168,
+      "mean_predicted_uplift": 0.0583
+    }
+  }
+}
