@@ -1,0 +1,6 @@
+data/*.gz
+data/*.csv
+data/*.parquet
+__pycache__/
+*.pyc
+.venv/
